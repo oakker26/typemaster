@@ -1,0 +1,29 @@
+// Function for converting a px based font-size to rem.
+@function calculateRem($size) {
+    $remSize: $size / 16;
+    //Default font size on html element is 100%, equivalent to 16px;
+    @return #{$remSize}rem;
+}
+@mixin mainBtn {
+	font-size: calculateRem(16);
+	padding: .5rem;
+	font-weight: 600;
+	line-height: 26px;
+	background-color: #e8eff2;
+	border: 2px solid transparent;
+	border-radius: 8px;
+    text-transform: uppercase;
+}
+@mixin contentText {
+    font-size: calculateRem(16);
+    line-height: 26px;
+    color: $para-tx-color;
+    margin-top: 35px;
+}
+
+
+@mixin mQ($arg) {
+    @media screen and (min-width: $arg) {
+        @content;
+    }
+}

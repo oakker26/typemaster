@@ -1,0 +1,74 @@
+//-------------cards section ---------//
+
+.secondary {
+    margin-top: 117px;
+
+    .cards {
+        display: grid;
+       // grid-template-columns: 1fr 1fr;
+       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 45px;
+        margin-bottom: 45px;
+    }
+
+    .card__image__holder {
+        background-color: $orange-bg;
+        width: 65px;
+        height: 65px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+    }
+
+
+    .card__title {
+        font-size: calculateRem(24);
+        line-height: 28px;
+        font-weight: 900;
+        color: $heading-tx-color;
+        margin: 0 100px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .card__description {
+        @include contentText;
+        margin-top: 0;
+        padding: 0 24px;
+        text-align: center;
+    }
+
+    @include mQ(680px) {
+        margin-left: 39px;
+        margin-right: 98px;
+        margin-top: 134px;
+
+        .card {
+            align-items: baseline;
+        }
+
+        .card__title {
+            margin: 0px;
+            text-align: left;
+        }
+
+        .card__description {
+            padding: 0;
+            text-align: left;
+        }
+    }
+
+    @include mQ(1280px) {
+        margin: 134px 165px 0;
+    }
+}
